@@ -3,7 +3,7 @@ from time import sleep
 import threading
 import tkinter as tk
 import queue
-import winsound
+from playsound import playsound
 
 mylist = []
 ran = True
@@ -130,8 +130,7 @@ def alarm(extend=True):
 def playSound():
     global ran
     while True:
-        if ran==False:
-            winsound.PlaySound("Song", winsound.SND_FILENAME)
+        if ran == False: playsound("./media/alarms/song.wav", block=True)
 
 
 
